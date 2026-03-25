@@ -25,7 +25,12 @@
    pip install -r requirements.txt
    ```
 
-3. Запускаем сервер:
+3. Открываем порт 8000 в брандмауэре Windows (запустить PowerShell от имени Администратора):
+   ```powershell
+   New-NetFirewallRule -DisplayName "NetDiag Port 8000" -Direction Inbound -LocalPort 8000 -Protocol TCP -Action Allow
+   ```
+
+4. Запускаем сервер:
    ```cmd
    uvicorn netdiag_micro:app --host 0.0.0.0 --port 8000
    ```

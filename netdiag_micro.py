@@ -28,7 +28,7 @@ def run_bg_checks(client_ip: str, rdp_status: str):
 
     # Трассировка (10 прыжков для скорости)
     try:
-        tracert = subprocess.run(["tracert", "-d", "-h", "10", client_ip], capture_output=True, text=True, encoding='cp866').stdout.strip()
+        tracert = subprocess.run(["tracert", "-d", client_ip], capture_output=True, text=True, encoding='cp866').stdout.strip()
     except Exception:
         tracert = "Ошибка Tracert"
 
